@@ -25,7 +25,7 @@ class App extends Component {
         <Banner />
         <div class="searchAndButtons">
           <SearchBar />
-        <RowHomeScreenButtons />
+        {/* <RowHomeScreenButtons /> */}
         </div>
       </div>
     );
