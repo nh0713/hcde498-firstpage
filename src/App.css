@@ -97,7 +97,7 @@
   border-radius: 50px;
 }
 
-.btn:hover {
+.btn:hover, .search-btn:hover {
   color: black;
   text-decoration: underline;
 }
@@ -105,8 +105,4 @@
 .searchAndButtons {
   width: 60%;
   margin-top: 10%;
-  /* position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
 }
