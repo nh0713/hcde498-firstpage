@@ -43,15 +43,24 @@ class Banner extends Component {
 }
 
 class SearchBar extends Component{
-  searchClicked(event) {
-    console.log("search clicked");
+  constructor(props) {
+    super(props);
+    this.searchText = "";
+  }
+
+  searchClicked = (event) => {
+    console.log(this.searchText);
+  }
+
+  seachInput = (event) => {
+    this.searchText = event.target.value;
   }
 
   render() {
     return (
       <div class="search-box">
         <form>
-          <input class="search-txt" type="text" placeholder="Type to search" aria-label="Search"></input>  
+          <input class="search-txt" type="text" placeholder="Type to search" aria-label="Search" onChange={this.seachInput}></input>  
         </form>        
         <a class="search-btn" href='#' onClick={this.searchClicked}>
           <i class="fas fa-search fa-2x"></i>

@@ -20,7 +20,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: white;
 }
 
 @keyframes App-logo-spin {
@@ -35,7 +35,7 @@
 .banner {
   width: 100%;
   height: 200px;
-  background-color: lightsalmon;
+  /* background-color: #0198E1; */
 }
 
 .banner h1 {
@@ -48,7 +48,7 @@
 }
 
 .search-box {
-  background: lightsalmon;
+  background: white;
   width: 100%;
   height: 70px;
   border-radius: 40px;
@@ -61,7 +61,7 @@
   outline: none;
   float: left;
   padding: 0;
-  color: white;
+  color: black;
   font-size: 25px;
   line-height: 50px;
   width: 95%;
@@ -69,26 +69,26 @@
 
 
 .search-btn {
-  color: white;
+  color: gray;
   float: right;
   width: 5%;
   height: 50px;
   border-radius: 50%;
-  background: lightsalmon;
+  background: white;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: white;
+  color: lightgray;
 }
 
 .btn {
   width: 200px;
   height: 60px;
-  background-color: lightsalmon;
-  color: white;
+  background-color: white;
+  color: gray;
   font-size: 25px;
   border-radius: 50px;
 }
