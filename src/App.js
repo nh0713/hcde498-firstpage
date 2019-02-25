@@ -69,7 +69,7 @@ class RowHomeScreenButtons extends Component {
       return (
           <div class="btnContainer">
             <HomeScreenButton type="My Posts" />
-            <HomeScreenButton type="Sll" />
+            <HomeScreenButton type="Sell" />
             <HomeScreenButton type="Bookmarks" />
           </div>
       );
