@@ -23,9 +23,9 @@ class App extends Component {
         </header> */}
 
         <Banner />
-        <div class="searchAndButtons">
+        <div class="container searchAndButtons">
           <SearchBar />
-        <RowHomeScreenButtons />
+          <RowHomeScreenButtons />
         </div>
       </div>
     );
@@ -35,7 +35,7 @@ class App extends Component {
 class Banner extends Component {
   render() {
     return (
-      <div class="banner">
+      <div class="container-fluid banner">
         <h1>Buy and Sell Textbooks Locally</h1>
       </div>
     )

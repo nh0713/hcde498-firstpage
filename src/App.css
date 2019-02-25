@@ -104,8 +104,9 @@
 
 .searchAndButtons {
   width: 60%;
-  position: absolute;
+  margin-top: 10%;
+  /* position: absolute;
   top: 60%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
 }
