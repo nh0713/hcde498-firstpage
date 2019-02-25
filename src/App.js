@@ -43,11 +43,17 @@ class Banner extends Component {
 }
 
 class SearchBar extends Component{
+  searchClicked(event) {
+    console.log("search clicked");
+  }
+
   render() {
     return (
       <div class="search-box">
-        <input class="search-txt" type="text" placeholder="Type to search" aria-label="Search"></input>
-        <a class="search-btn" href='#'>
+        <form>
+          <input class="search-txt" type="text" placeholder="Type to search" aria-label="Search"></input>  
+        </form>        
+        <a class="search-btn" href='#' onClick={this.searchClicked}>
           <i class="fas fa-search fa-2x"></i>
         </a>
       </div>
@@ -67,7 +73,7 @@ class HomeScreenButton extends Component {
 class RowHomeScreenButtons extends Component {
     render() {
       return (
-          <div class="btnContainer">
+          <div class="row justify-content-center">
             <HomeScreenButton type="My Posts" />
             <HomeScreenButton type="Sell" />
             <HomeScreenButton type="Bookmarks" />
@@ -75,5 +81,6 @@ class RowHomeScreenButtons extends Component {
       );
     }
 }
+
 
 export default App;
