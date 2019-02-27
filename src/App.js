@@ -13,10 +13,10 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route path='/' component={LoginOrSearchPage} exact/>
-          <Route path='/login' component={LoginPage} />
-          <Route path='/createAccount' component={CreateAccount} />
-          <Route path='/searchPage' component={SearchPage} />
+          <Route path='/hcde498-firstpage/' component={LoginOrSearchPage} exact/>
+          <Route path='/hcde498-firstpage/login' component={LoginPage} />
+          <Route path='/hcde498-firstpage/createAccount' component={CreateAccount} />
+          <Route path='/hcde498-firstpage/searchPage' component={SearchPage} />
           <Route component={Error} />
         </Switch>
       </Router>

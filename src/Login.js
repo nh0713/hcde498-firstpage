@@ -60,7 +60,7 @@ class LoginPage extends Component {
                 Login
             </Button>
             </form>
-            <Link to="/createAccount">
+            <Link to="/hcde498-firstpage/createAccount">
                 <div className="mt-4">
                     <a className="createAccount" href="#" >Create Account</a>
                 </div>
