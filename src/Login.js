@@ -60,11 +60,12 @@ class LoginPage extends Component {
                 Login
             </Button>
             </form>
-            <Link to="/hcde498-firstpage/createAccount">
+            {/* <Link to="/hcde498-firstpage/createAccount"> */}
+            {/* <Link to="/createAccount"> */}
                 <div className="mt-4">
                     <a className="createAccount" href="#" >Create Account</a>
                 </div>
-            </Link>
+            {/* </Link> */}
           </div>
         </div>
       );

@@ -5,21 +5,30 @@ import SearchPage from './SearchPage'
 import LoginPage from './Login'
 import CreateAccount from './CreateAccount'
 import Error from './Error'
+import LoginCreateAccount from './LoginCreateAccount'
 import fire from './config/Fire';
 
 class App extends Component {
 
   render() {
     return (
-      <Router>
-        <Switch>
-          <Route path='/hcde498-firstpage/' component={LoginOrSearchPage} exact/>
-          <Route path='/hcde498-firstpage/login' component={LoginPage} />
-          <Route path='/hcde498-firstpage/createAccount' component={CreateAccount} />
-          <Route path='/hcde498-firstpage/searchPage' component={SearchPage} />
-          <Route component={Error} />
-        </Switch>
-      </Router>
+      // <Router>
+      //   <Switch>
+      //     <Route path='/hcde498-firstpage/' component={LoginOrSearchPage} exact/>
+      //     <Route path='/hcde498-firstpage/login' component={LoginPage} />
+      //     <Route path='/hcde498-firstpage/createAccount' component={CreateAccount} />
+      //     <Route path='/hcde498-firstpage/searchPage' component={SearchPage} />
+      //     <Route component={Error} />
+      //   </Switch> */}
+      //   <Switch>
+      //     <Route path='/' component={LoginOrSearchPage} exact/>
+      //     <Route path='/login' component={LoginPage} />
+      //     <Route path='/createAccount' component={CreateAccount} />
+      //     <Route path='/searchPage' component={SearchPage} />
+      //     <Route component={Error} />
+      //   </Switch>
+      // </Router>
+      <LoginOrSearchPage />
     );
   }
 }
@@ -52,7 +61,7 @@ class LoginOrSearchPage extends Component {
 
   render() {
     return (
-      this.state.user ? ( <SearchPage/>) : (<LoginPage />)
+      this.state.user ? ( <SearchPage/>) : (<LoginCreateAccount />)
     );
   }
 }

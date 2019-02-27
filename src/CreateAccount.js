@@ -37,15 +37,15 @@ class CreateAccount extends Component {
             alert("passwords do not match");
             console.log("passwords do not match");
         }
-        fire.updateProfie({
-            displayName: this.state.displayName,
-        })
+        // fire.updateProfie({
+        //     displayName: this.state.displayName,
+        // })
     }
   
     render() {
       return (
         <div>
-          <LoginBanner />
+          {/* <LoginBanner /> */}
           <div className="login">
             <form onSubmit={this.handleSubmit}>
               <FormGroup controlId="email" size="large">
