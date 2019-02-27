@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { Container, Row, Col } from "react-bootstrap";
 import './App.css';
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
-import Banner from './Banner'
+import SignedInBanner from './SignedInBanner'
 
 class SearchPage extends Component {
     render() {
       return (
         <div>
-          <Banner />
+          <SignedInBanner />
           <Container fluid className="searchAndButtons">
             <SearchBar />
             <RowHomeScreenButtons />

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import { Button, FormGroup, FormControl, FormLabel, Container, Row, Col } from "react-bootstrap";
+import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
 
 
-class Banner extends Component {
+class LoginBanner extends Component {
     render() {
       return (
         <header fluid className="banner">
@@ -13,4 +15,4 @@ class Banner extends Component {
     }
   }
 
-  export default Banner;
+  export default LoginBanner;

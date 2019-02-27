@@ -2,34 +2,36 @@ import React, { Component } from 'react';
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import './App.css';
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
-import Banner from './Banner'
+import LoginBanner from './LoginBanner'
+import fire from './config/Fire';
 
 class LoginPage extends Component {
     constructor(props) {
-      super(props);
-      this.email = "";
-      this.password = "";
+        super(props);
+        this.login = this.login.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.state = {
+        email: '',
+        password: ''
+        };
     }
-  
-    handleSubmit = (event) => {
-      console.log(this.email);
-      console.log(this.password)
-    }
-  
-    emailChange = (event) => {
-      console.log(event.target.value);
-      this.email = event.target.value;
-    }
-  
-    passwordChange = (event) => {
-      console.log(event.target.value);
-      this.password = event.target.value;
-    }
+    handleChange(e) {
+        this.setState({ [e.target.name]: e.target.value });
+        }
+    
+    login(e) {
+        e.preventDefault();
+        fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
+        }).catch((error) => {
+            console.log(error);
+            alert(error);
+        });
+    }  
   
     render() {
       return (
         <div>
-          <Banner />
+          <LoginBanner />
           <div className="login">
             <form onSubmit={this.handleSubmit}>
               <FormGroup controlId="email" size="large">
@@ -37,28 +39,32 @@ class LoginPage extends Component {
                 <FormControl
                   autoFocus
                   type="email"
-                  onChange={this.emailChange}
+                  name="email"
+                  onChange={this.handleChange}
                 />
               </FormGroup>
               <FormGroup controlId="password" size="large"> 
                 <FormLabel>Password</FormLabel>
                 <FormControl
                   type="password"
-                  onChange={this.passwordChange}
+                  name="password"
+                  onChange={this.handleChange}
                 />
               </FormGroup>
               <Button
                 block
                 size="large"
                 type="submit"
-                onClick={this.handleSubmit}
+                onClick={this.login}
               >
                 Login
             </Button>
             </form>
-            <div className="mt-4">
-              <a href="#" >Create Account</a>
-            </div>
+            <Link to="/createAccount">
+                <div className="mt-4">
+                    <a className="createAccount" href="#" >Create Account</a>
+                </div>
+            </Link>
           </div>
         </div>
       );
