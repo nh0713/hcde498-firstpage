@@ -8,6 +8,8 @@ class SignedInBanner extends Component {
     constructor(props) {
         super(props);
         this.logout = this.logout.bind(this);
+        this.user= fire.auth().currentUser;
+        this.userEmail = this.user.email;
     }
 
     logout() {
@@ -18,14 +20,14 @@ class SignedInBanner extends Component {
       return (
         <header fluid >
         <Row className="banner">
-            <Col sm={12} md={10} lg={10}>
+            <Col sm={12} md={9} lg={9}>
                 <h1>Buy and Sell Textbooks Locally</h1>
             </Col>
             <Col sm={6} md={1} lg={1}>
                 <Button onClick={this.logout}>Logout</Button>
             </Col>
-            <Col sm={6} md={1} lg={1}>
-                <Button>Account</Button>
+            <Col sm={6} md={2} lg={2}>
+                <Button>Acccount ({this.userEmail})</Button>
             </Col>
         </Row>
         </header>

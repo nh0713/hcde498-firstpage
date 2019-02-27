@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import './App.css';
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import SignedInBanner from './SignedInBanner'
+import fire from './config/Fire';
 
 class SearchPage extends Component {
     render() {
