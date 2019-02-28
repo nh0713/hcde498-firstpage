@@ -24,7 +24,7 @@ class SignedInBanner extends Component {
             </Col>
             <Col sm={6} md={1} lg={1}>
                 {/* <Link to='/'> */}
-                <Linkg to='hcde498-firstpage/'>
+                <Link to='hcde498-firstpage/'>
                     <Button onClick={this.logout}>Logout</Button>
                 </Link>
             </Col>
