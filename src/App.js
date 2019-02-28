@@ -11,15 +11,15 @@ class App extends Component {
 
   render() {
     return (
-      // <Router>
-      //   <Switch>
-      //     <Route path='/hcde498-firstpage/' component={LoginOrSearchPage} exact/>
-      //     <Route path='/hcde498-firstpage/login' component={LoginPage} />
-      //     <Route path='/hcde498-firstpage/createAccount' component={CreateAccount} />
-      //     <Route path='/hcde498-firstpage/searchPage' component={SearchPage} />
-      //     <Route component={Error} />
-      //   </Switch> */}
-      <div>
+      <Router>
+        <Switch>
+          <Route path='/' component={LoginOrSearchPage} exact/>
+          <Route path='/searchPage' component={SearchPage} />
+          <Route path='/sellPage' component={SellPage} />
+          <Route component={Error} />
+        </Switch>
+      </Router>
+      /* <div>
         <Router>
           <Switch>
             <Route path='/' component={LoginOrSearchPage} exact/>
@@ -28,7 +28,7 @@ class App extends Component {
             <Route component={Error} />
           </Switch>
         </Router>
-      </div>
+      </div> */
     );
   }
 }
