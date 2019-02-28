@@ -64,7 +64,8 @@ class SearchPage extends Component {
                 <SearchPageButton type="My Posts" />
             </Col>
             <Col lg={4} className="mt-2">
-              <Link to="/sellPage">
+              {/* <Link to="/sellPage"> */}
+              <Link to='hcde498-firstpage/sellPage'>
                 <SearchPageButton type="Sell" />
               </Link>
             </Col>

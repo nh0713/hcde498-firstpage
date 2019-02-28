@@ -23,7 +23,8 @@ class SignedInBanner extends Component {
                 <h1>Textbook Buy & Sell</h1>
             </Col>
             <Col sm={6} md={1} lg={1}>
-                <Link to='/'>
+                {/* <Link to='/'> */}
+                <Linkg to='hcde498-firstpage/'>
                     <Button onClick={this.logout}>Logout</Button>
                 </Link>
             </Col>
