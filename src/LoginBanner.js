@@ -4,12 +4,12 @@ import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
 
-
 class LoginBanner extends Component {
     render() {
       return (
-        <header fluid className="banner">
-          <h1>Buy and Sell Textbooks Locally</h1>
+        <header className="banner">
+          <img src={logo} alt="logo"></img>
+          <h1>Textbook Buy & Sell</h1>
         </header>
       );
     }

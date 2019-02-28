@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Button, FormGroup, FormControl, FormLabel} from "react-bootstrap";
 import './App.css';
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
-import LoginBanner from './LoginBanner'
 import fire from './config/Fire';
 
 class CreateAccount extends Component {
@@ -47,7 +46,7 @@ class CreateAccount extends Component {
         <div>
           {/* <LoginBanner /> */}
           <div className="login">
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.createAccount}>
               <FormGroup controlId="email" size="large">
                 <FormLabel>Email</FormLabel>
                 <FormControl
@@ -76,7 +75,6 @@ class CreateAccount extends Component {
               <FormGroup controlId="displayName" size="large"> 
                 <FormLabel>Display Name</FormLabel>
                 <FormControl
-                    required
                   type="text"
                   name="displayName"
                   onChange={this.handleChange}

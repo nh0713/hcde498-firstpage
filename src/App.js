@@ -2,11 +2,10 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
 import SearchPage from './SearchPage'
-import LoginPage from './Login'
-import CreateAccount from './CreateAccount'
 import Error from './Error'
 import LoginCreateAccount from './LoginCreateAccount'
-import fire from './config/Fire';
+import SellPage from './SellPage'
+import fire from './config/Fire'
 
 class App extends Component {
 
@@ -20,15 +19,16 @@ class App extends Component {
       //     <Route path='/hcde498-firstpage/searchPage' component={SearchPage} />
       //     <Route component={Error} />
       //   </Switch> */}
-      //   <Switch>
-      //     <Route path='/' component={LoginOrSearchPage} exact/>
-      //     <Route path='/login' component={LoginPage} />
-      //     <Route path='/createAccount' component={CreateAccount} />
-      //     <Route path='/searchPage' component={SearchPage} />
-      //     <Route component={Error} />
-      //   </Switch>
-      // </Router>
-      <LoginOrSearchPage />
+      <div>
+        <Router>
+          <Switch>
+            <Route path='/' component={LoginOrSearchPage} exact/>
+            <Route path='/searchPage' component={SearchPage} />
+            <Route path='/sellPage' component={SellPage} />
+            <Route component={Error} />
+          </Switch>
+        </Router>
+      </div>
     );
   }
 }

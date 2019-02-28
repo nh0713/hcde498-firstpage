@@ -5,7 +5,11 @@
 .banner {
   padding: 10px;
   display: flex;
-  align-items: center;  
+  align-items: left;  
+}
+
+.banner img {
+  width: 20%;
 }
 
 .banner Col {
@@ -75,10 +79,6 @@
 }
 
 .login {
-  color: white;
-}
-
-.login a {
   color: black;
 }
 
@@ -89,6 +89,12 @@
 .createAccount {
   text-align: center;
   display: block;
+}
+
+.loginCreateAccount {
+  background-color: white;
+  width: 70%;
+  margin: auto;
 }
 
 @media all and (min-width: 480px) {

@@ -31,7 +31,6 @@ class LoginPage extends Component {
     render() {
       return (
         <div>
-          <LoginBanner />
           <div className="login">
             <form onSubmit={this.handleSubmit}>
               <FormGroup controlId="email" size="large">
