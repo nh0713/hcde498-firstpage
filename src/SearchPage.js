@@ -3,7 +3,6 @@ import { Container, Row, Col } from "react-bootstrap";
 import './App.css';
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import SignedInBanner from './SignedInBanner'
-import fire from './config/Fire';
 
 class SearchPage extends Component {
     render() {
@@ -59,19 +58,19 @@ class SearchPage extends Component {
   class RowHomeScreenButtons extends Component {
     render() {
       return (
-        <div className="mt-5">
-          <Row className="homePageBtnRow justify-content-center">
-            <Col lg={4} className="mt-4">
+        <Container className="mt-5">
+          <Row className="homePageBtnRow">
+            <Col lg={4} className="mt-2">
                 <SearchPageButton type="My Posts" />
             </Col>
-            <Col lg={4} className="mt-4">
+            <Col lg={4} className="mt-2">
                 <SearchPageButton type="Sell" />
             </Col>
-            <Col lg={4} className="mt-4">
+            <Col lg={4} className="mt-2">
                 <SearchPageButton type="Bookmarks" />
             </Col>
           </Row>
-        </div>
+        </Container>
       );
     }
 }
