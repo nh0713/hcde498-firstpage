@@ -5,6 +5,7 @@ import SearchPage from './SearchPage'
 import Error from './Error'
 import LoginCreateAccount from './LoginCreateAccount'
 import SellPage from './SellPage'
+import MyPosts from './myPosts'
 import fire from './config/Fire'
 
 class App extends Component {
@@ -16,19 +17,19 @@ class App extends Component {
           <Route path='/hcde498-firstpage/' component={LoginOrSearchPage} exact/>
           <Route path='/hcde498-firstpage/searchPage' component={SearchPage} />
           <Route path='/hcde498-firstpage/sellPage' component={SellPage} />
+          <Route path='/hcde498-firstpage/myPosts' component={MyPosts} />
           <Route component={Error} />
         </Switch>
       </Router>
-      /* <div>
-        <Router>
-          <Switch>
-            <Route path='/' component={LoginOrSearchPage} exact/>
-            <Route path='/searchPage' component={SearchPage} />
-            <Route path='/sellPage' component={SellPage} />
-            <Route component={Error} />
-          </Switch>
-        </Router>
-      </div> */
+      // <Router>
+      //   <Switch>
+      //     <Route path='/' component={LoginOrSearchPage} exact/>
+      //     <Route path='/searchPage' component={SearchPage} />
+      //     <Route path='/sellPage' component={SellPage} />
+      //     <Route path='/myPosts' component={MyPosts} />
+      //     <Route component={Error} />
+      //   </Switch>
+      // </Router>
     );
   }
 }

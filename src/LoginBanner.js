@@ -7,10 +7,12 @@ import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
 class LoginBanner extends Component {
     render() {
       return (
-        <header className="banner">
-          <img src={logo} alt="logo"></img>
-          <h1>Textbook Buy & Sell</h1>
-        </header>
+        <Row className="banner">
+            <Col sm={12} md={9} lg={9}>
+                <img src={logo} alt="logo"></img>
+                <h1>Textbook Buy & Sell</h1>
+            </Col>
+        </Row>
       );
     }
   }

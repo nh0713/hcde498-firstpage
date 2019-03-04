@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import './App.css';
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import SignedInBanner from './SignedInBanner'
@@ -51,7 +51,7 @@ class SearchPage extends Component {
     render() {
       let type = this.props.type;
   
-      return <a href="#" className="homeBtn m-5 btn-lg" role="button">{type}</a>;
+      return <Button className="homeBtn m-5" role="button">{type}</Button>;
     }
   }
 
@@ -61,10 +61,14 @@ class SearchPage extends Component {
         <Container className="mt-5">
           <Row className="homePageBtnRow">
             <Col lg={4} className="mt-2">
+              {/* <Link to='/myPosts'> */}
+              <Link to='/hcde498-firstpage/myPosts'>
                 <SearchPageButton type="My Posts" />
+              </Link>
             </Col>
             <Col lg={4} className="mt-2">
-              <Link to="/hcde498-firstpage/sellPage">
+              {/* <Link to="/sellPage"> */}
+              <Link to='/hcde498-firstpage/sellPage'>
                 <SearchPageButton type="Sell" />
               </Link>
             </Col>

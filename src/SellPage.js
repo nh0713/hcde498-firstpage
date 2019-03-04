@@ -16,9 +16,8 @@ class SellPage extends Component {
         this.user = fire.auth().currentUser;
         this.userEmail = this.user.email;
 
-        const db = fire.firestore();
-
         this.state = {
+            userEmail: "",
             textbookName: "",
             location: "",
             condition: "",
@@ -31,25 +30,31 @@ class SellPage extends Component {
     }
 
     postTextbook(e) {
-        // const test = this.db.collection("textbooksForSale");
-        // let query = test.where("textbookName", "==", "Psychology");
-        // console.log(query);
-        const textbook = this.db.collection("textbooksForSale").add({
+        
+        const db = fire.firestore();
+        const textbook = db.collection("textbooksForSale").add({
             textbookName: this.state.textbookName,
             location: this.state.location,
             condition: this.state.condition,
             price: this.state.price,
             userID: this.userEmail
+        });
+        const userPosts = db.collection(this.userEmail).add({
+            textbookName: this.state.textbookName,
+            location: this.state.location,
+            condition: this.state.condition,
+            price: this.state.price,
         })
-        console.log(this.state.textbookName);
-        console.log(this.state.location);
-        console.log(this.state.condition);
-        console.log(this.state.price);
+        const getUserPosts = db.collection(this.userEmail).get().then((snapshot) => {
+            snapshot.docs.forEach(doc => {
+                console.log(doc.data().textbookName);
+            })
+        })
     }
 
     render() {
         return (
-            <div>
+            <div className="login">
                 <SignedInBanner />
                 <form className="searchPage">
                     <FormGroup controlId="textbookName" size="large">
@@ -61,18 +66,10 @@ class SellPage extends Component {
                         />
                     </FormGroup>
                     <FormGroup controlId="location" size="large">
-                        <FormLabel>location</FormLabel>
+                        <FormLabel>Location</FormLabel>
                         <FormControl
                         type="text"
                         name="location"
-                        onChange={this.handleChange}
-                        />
-                    </FormGroup>
-                    <FormGroup controlId="condition" size="large">
-                        <FormLabel>Condition</FormLabel>
-                        <FormControl
-                        type="number"
-                        name="condition"
                         onChange={this.handleChange}
                         />
                     </FormGroup>
@@ -84,13 +81,23 @@ class SellPage extends Component {
                         onChange={this.handleChange}
                         />
                     </FormGroup>
-                    <Button
-                        block
-                        size="large"
-                        onClick={this.postTextbook}
-                    >
-                        Post
+                    <FormGroup controlId="condition" size="large">
+                        <FormLabel>Condition (0 - 10)</FormLabel>
+                        <FormControl
+                        type="number"
+                        name="condition"
+                        onChange={this.handleChange}
+                        />
+                    </FormGroup>
+                    <Link to='myPosts'>
+                        <Button
+                            block
+                            size="large"
+                            onClick={this.postTextbook}
+                        >
+                            Post
                     </Button>
+                    </Link>
                 </form>
             </div>
         );

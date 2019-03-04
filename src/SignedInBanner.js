@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import { Row, Col, Button } from 'react-bootstrap';
 import fire from './config/Fire';
+import logo from './logo.svg';
 
 class SignedInBanner extends Component {
     constructor(props) {
@@ -20,15 +21,16 @@ class SignedInBanner extends Component {
       return (
         <Row className="banner">
             <Col sm={12} md={9} lg={9}>
+                <img src={logo} alt="logo"></img>
                 <h1>Textbook Buy & Sell</h1>
             </Col>
             <Col sm={6} md={1} lg={1}>
-                <Link to='/hcde498-firstpage/'>
+                <Link to='/'>
                     <Button onClick={this.logout}>Logout</Button>
                 </Link>
             </Col>
             <Col sm={6} md={2} lg={2}>
-                <Button>Acccount ({this.userEmail})</Button>
+                <Button>Acccount ({this.user.email})</Button>
             </Col>
         </Row>
       );
