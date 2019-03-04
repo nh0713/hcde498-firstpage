@@ -32,7 +32,7 @@ class SellPage extends Component {
     postTextbook(e) {
         
         const db = fire.firestore();
-        const textbook = db.collection("textbooksForSale").add({
+        const textbook = db.collection(this.state.textbookName).add({
             textbookName: this.state.textbookName,
             location: this.state.location,
             condition: this.state.condition,
@@ -89,7 +89,8 @@ class SellPage extends Component {
                         onChange={this.handleChange}
                         />
                     </FormGroup>
-                    <Link to='myPosts'>
+                    {/* <Link to='myPosts'> */}
+                    <Link to='/hcde498-firstpage/sellPage'>
                         <Button
                             block
                             size="large"
