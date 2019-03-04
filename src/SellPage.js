@@ -45,61 +45,63 @@ class SellPage extends Component {
             condition: this.state.condition,
             price: this.state.price,
         })
-        const getUserPosts = db.collection(this.userEmail).get().then((snapshot) => {
-            snapshot.docs.forEach(doc => {
-                console.log(doc.data().textbookName);
-            })
-        })
+        // const getUserPosts = db.collection(this.userEmail).get().then((snapshot) => {
+        //     snapshot.docs.forEach(doc => {
+        //         console.log(doc.data().textbookName);
+        //     })
+        // })
     }
 
     render() {
         return (
-            <div className="login">
+            <div>
                 <SignedInBanner />
-                <form className="searchPage">
-                    <FormGroup controlId="textbookName" size="large">
-                        <FormLabel>Display Name</FormLabel>
-                        <FormControl
-                        type="text"
-                        name="textbookName"
-                        onChange={this.handleChange}
-                        />
-                    </FormGroup>
-                    <FormGroup controlId="location" size="large">
-                        <FormLabel>Location</FormLabel>
-                        <FormControl
-                        type="text"
-                        name="location"
-                        onChange={this.handleChange}
-                        />
-                    </FormGroup>
-                    <FormGroup controlId="price" size="large">
-                        <FormLabel>Price</FormLabel>
-                        <FormControl
-                        type="text"
-                        name="price"
-                        onChange={this.handleChange}
-                        />
-                    </FormGroup>
-                    <FormGroup controlId="condition" size="large">
-                        <FormLabel>Condition (0 - 10)</FormLabel>
-                        <FormControl
-                        type="number"
-                        name="condition"
-                        onChange={this.handleChange}
-                        />
-                    </FormGroup>
-                    {/* <Link to='myPosts'> */}
-                    <Link to='/hcde498-firstpage/sellPage'>
-                        <Button
-                            block
-                            size="large"
-                            onClick={this.postTextbook}
-                        >
-                            Post
-                    </Button>
-                    </Link>
-                </form>
+                <div className="login">
+                    <form className="searchPage">
+                        <FormGroup controlId="textbookName" size="large">
+                            <FormLabel>Display Name</FormLabel>
+                            <FormControl
+                            type="text"
+                            name="textbookName"
+                            onChange={this.handleChange}
+                            />
+                        </FormGroup>
+                        <FormGroup controlId="location" size="large">
+                            <FormLabel>Location</FormLabel>
+                            <FormControl
+                            type="text"
+                            name="location"
+                            onChange={this.handleChange}
+                            />
+                        </FormGroup>
+                        <FormGroup controlId="price" size="large">
+                            <FormLabel>Price</FormLabel>
+                            <FormControl
+                            type="text"
+                            name="price"
+                            onChange={this.handleChange}
+                            />
+                        </FormGroup>
+                        <FormGroup controlId="condition" size="large">
+                            <FormLabel>Condition (0 - 10)</FormLabel>
+                            <FormControl
+                            type="number"
+                            name="condition"
+                            onChange={this.handleChange}
+                            />
+                        </FormGroup>
+                        {/* <Link to='myPosts'> */}
+                        <Link to='/hcde498-firstpage/myPosts'>
+                            <Button
+                                block
+                                size="large"
+                                onClick={this.postTextbook}
+                            >
+                                Post
+                        </Button>
+                        </Link>
+                    </form>                
+                </div>
             </div>
         );
     }

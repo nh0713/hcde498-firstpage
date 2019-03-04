@@ -10,7 +10,6 @@ class SignedInBanner extends Component {
         super(props);
         this.logout = this.logout.bind(this);
         this.user = fire.auth().currentUser;
-        this.userEmail = this.user.email;
     }
 
     logout() {

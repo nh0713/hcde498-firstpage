@@ -22,14 +22,21 @@ class SearchPage extends Component {
     constructor(props) {
       super(props);
       this.searchText = "";
+
+      this.state = {
+        textbookName: "",
+      };
     }
   
     searchClicked = (event) => {
       console.log(this.searchText);
+      this.setState({textbookName: this.searchText});
     }
   
     searchInput = (event) => {
       this.searchText = event.target.value;
+      this.setState({textbookName: this.searchText});
+      // console.log(this.searchText);
     }
   
     render() {
@@ -37,10 +44,13 @@ class SearchPage extends Component {
         <div className="search-box">
           <form>
             <input className="search-txt" type="text" placeholder="Type to search" aria-label="Search" onChange={this.searchInput}></input>  
-          </form>        
-          <a className="search-btn" href='#' onClick={this.searchClicked}>
-            <i className="fas fa-search fa-2x"></i>
-          </a>
+          </form>
+          <Link to={`/hcde498-firstpage/searchResults/${this.state.textbookName}`}>
+          {/* <Link to={`/searchResults/${this.state.textbookName}`}> */}
+            <a className="search-btn" href='#' onClick={this.searchClicked}>
+              <i className="fas fa-search fa-2x"></i>
+            </a> 
+          </Link>   
         </div>
       );
       

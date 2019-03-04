@@ -18,20 +18,11 @@ class MyPosts extends Component {
         this.state = {
             myPosts: [],
           };
-
-        // console.log('running');
-        // const db = fire.firestore();
-        // const getUserPosts = db.collection(this.userEmail).get().then((snapshot) => {
-        //     this.myPosts = snapshot.docs;
-        //     console.log(this.myPosts[0].data());
-        // })
     }
 
     componentDidMount() {
-        console.log('mounting');
         const db = fire.firestore();
         const getUserPosts = db.collection(this.userEmail).get().then((snapshot) => {
-            console.log(snapshot.docs[0].data());
             this.setState ({
                 myPosts: snapshot.docs,
             });
@@ -55,19 +46,6 @@ class MyPosts extends Component {
                 </Container>
             </div>
         );
-    }
-}
-
-class Post extends Component {
-    render() {
-        return (
-            <div className="individualPost mt-3">
-                <div>Name</div>
-                <div>Location</div>
-                <div>Condition</div>
-                <div>Price</div>
-            </div>
-        )
     }
 }
 
