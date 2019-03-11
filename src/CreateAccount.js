@@ -16,6 +16,7 @@ class CreateAccount extends Component {
             password: "",
             passwordRetype: "",
             displayName: "",
+            collegeYouAttend: "",
           };
     }
 
@@ -24,27 +25,29 @@ class CreateAccount extends Component {
     }
 
     createAccount(e){
-        if(this.state.password === this.state.passwordRetype){
-            e.preventDefault();
-            fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
-            }).then((u)=>{console.log(u)})
-            .catch((error) => {
-                console.log(error);
-                alert(error);
-                })
-        } else {
-            alert("passwords do not match");
-            console.log("passwords do not match");
-        }
-        // fire.updateProfie({
-        //     displayName: this.state.displayName,
-        // })
+      const db = fire.firestore();
+        const userInfo = db.collection(this.state.email + 'info').add({
+            displayName: this.state.displayName,
+            userID: this.state.email,
+            college: this.state.collegeYouAttend,
+        });
+      if(this.state.password === this.state.passwordRetype){
+          e.preventDefault();
+          fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
+          }).then((u)=>{console.log(u)})
+          .catch((error) => {
+              console.log(error);
+              alert(error);
+              })
+      } else {
+          alert("passwords do not match");
+          console.log("passwords do not match");
+      }
     }
   
     render() {
       return (
         <div>
-          {/* <LoginBanner /> */}
           <div className="login">
             <form onSubmit={this.createAccount}>
               <FormGroup controlId="email" size="large">
@@ -73,10 +76,18 @@ class CreateAccount extends Component {
                 />
               </FormGroup>
               <FormGroup controlId="displayName" size="large"> 
-                <FormLabel>Display Name</FormLabel>
+                <FormLabel>First Name</FormLabel>
                 <FormControl
                   type="text"
                   name="displayName"
+                  onChange={this.handleChange}
+                />
+              </FormGroup>
+              <FormGroup controlId="college" size="large"> 
+                <FormLabel>College you attend</FormLabel>
+                <FormControl
+                  type="text"
+                  name="collegeYouAttend"
                   onChange={this.handleChange}
                 />
               </FormGroup>

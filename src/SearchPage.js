@@ -29,27 +29,25 @@ class SearchPage extends Component {
     }
   
     searchClicked = (event) => {
-      console.log(this.searchText);
       this.setState({textbookName: this.searchText});
     }
   
     searchInput = (event) => {
       this.searchText = event.target.value;
       this.setState({textbookName: this.searchText});
-      // console.log(this.searchText);
     }
   
     render() {
       return (
         <div className="search-box">
           <form>
-            <input className="search-txt" type="text" placeholder="Type to search" aria-label="Search" onChange={this.searchInput}></input>  
+            <input className="search-txt" type="text" placeholder="Type Textbook Title" aria-label="Search" onChange={this.searchInput}></input>  
           </form>
           <Link to={`/hcde498-firstpage/searchResults/${this.state.textbookName}`}>
           {/* <Link to={`/searchResults/${this.state.textbookName}`}> */}
-            <a className="search-btn" href='#' onClick={this.searchClicked}>
-              <i className="fas fa-search fa-2x"></i>
-            </a> 
+            {/* <a className="search-btn" href='#' onClick={this.searchClicked}> */}
+              <i className="search-btn fas fa-search fa-2x"></i>
+            {/* </a>  */}
           </Link>   
         </div>
       );
@@ -61,7 +59,7 @@ class SearchPage extends Component {
     render() {
       let type = this.props.type;
   
-      return <Button className="homeBtn m-5" role="button">{type}</Button>;
+      return <Button className="homeBtn" role="button">{type}</Button>;
     }
   }
 
@@ -70,19 +68,19 @@ class SearchPage extends Component {
       return (
         <Container className="mt-5">
           <Row className="homePageBtnRow">
-            <Col lg={4} className="mt-2">
+            <Col sm={12} md={6} lg={4}>
               {/* <Link to='/myPosts'> */}
               <Link to='/hcde498-firstpage/myPosts'>
                 <SearchPageButton type="My Posts" />
               </Link>
             </Col>
-            <Col lg={4} className="mt-2">
+            <Col sm={12} md={6} lg={4}>
               {/* <Link to="/sellPage"> */}
               <Link to='/hcde498-firstpage/sellPage'>
                 <SearchPageButton type="Sell" />
               </Link>
             </Col>
-            <Col lg={4} className="mt-2">
+            <Col sm={12} md={12} lg={4}>
                 <SearchPageButton type="Bookmarks" />
             </Col>
           </Row>

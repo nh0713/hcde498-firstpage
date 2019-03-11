@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import './App.css';
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
-import LoginBanner from './LoginBanner'
 import fire from './config/Fire';
 
 class LoginPage extends Component {

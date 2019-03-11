@@ -1,85 +1,143 @@
+img {
+  width: 80%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,body { height:100%; }
+
 .App {
   text-align: center;
 }
 
+h1, .tabs a, .top h1, .top h4 {
+  font-family: 'Work Sans', sans-serif;
+}
+
+.search-txt, .homeBtn, .tab, .testCol {
+  font-family: 'Roboto', sans-serif;
+}
+
 .banner {
   padding: 10px;
-  display: flex;
+  /* display: flex;
   align-items: left;  
+  text-align: left; */
+  background-color: #4682B4;
 }
 
 .banner img {
-  width: 5%;
+  float: left;
+}
+
+.banner h1 {
+  text-align: left;
+}
+
+.banner img {
+  width: 4%;
 }
 
 .banner Col {
   margin: 10px;
 }
 
-.banner h1 {
-  color: white;
-}
-
-.search-box {
-  background: white;
-  width: 100%;
-  height: 70px;
-  padding: 10px;
-  box-shadow: 1px 5px 5px;
-}
-
-.search-txt {
-  border: none;
-  background: none;
-  outline: none;
-  float: left;
-  padding: 0;
-  color: black;
-  font-size: 25px;
-  line-height: 50px;
-  width: 95%;
-}
-
-
-.search-btn {
-  color: #8D91BA;
-  float: right;
-  width: 5%;
-  height: 50px;
-  background: white;
+.colLogoutAccount {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: gray;
-}
-
-.homeBtn {
-  color: white;
-  font-size: 25px;
-  display: flex;
-  justify-content: center;
-  background-color: transparent; 
-  border-style: none;
-}
-
-.homePageBtnRow {
+.tabs {
   width: 100%;
+}
+
+.tabs a {
+  color: white;
+  font-weight: 500;
+}
+
+.tab {
+  background-color: white;
+  font-weight: 300;
+  box-shadow: 10px 10px 100px;
+}
+
+.tab, .tabs {
+  width: 60%;
   margin: auto;
 }
 
-.homeBtn:hover  {
-  background-color: transparent; 
-  border-style: none;
-  color: #E0B47D;
-  text-decoration: underline;
+.top h1 {
+  color:white;
+  font-weight: 500;
+  text-align: center;
 }
 
-.searchAndButtons {
+.top h4 {
+  color:white;
+  font-weight: 200;
+  text-align: center;
+}
+
+.top h1, .top h4 {
+  margin: 0;
+}
+
+.top img{
+  width: 70px;
+}
+
+.rowTest img{
+  float: left;
+}
+
+.rowTest {
+  padding: 1%;
+}
+
+.testContainer {
+  background-color: white;
+  height: 100%;
+  width: 80%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 3%;
+  padding-right: 3%;
+}
+
+.colBackgroundColor {
+  background-color: #d6ebf2;
+}
+
+.testCol {
+  margin-bottom: 5%;
+  margin-top: 5%;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.testCol img{
   width: 60%;
-  margin-top: 10%;
+}
+
+.btnGetStarted {
+  margin-top: 5%;
+  text-align: center;
+}
+
+h1 {
+  font-weight: 300;
+  text-align: center;
+  color: white;
+  margin: 20px;
 }
 
 .login {
@@ -97,22 +155,199 @@
 
 .loginCreateAccount {
   background-color: white;
-  width: 70%;
+  width: 60%;
+  position: absolute;
   margin: auto;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  box-shadow: 10px 10px 100px;
+}
+
+.search-box {
+  background: white;
+  width: 100%;
+  height: 70px;
+  padding: 10px;
+  box-shadow: 7px 5px 20px;
+}
+
+.search-txt {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: black;
+  font-size: 25px;
+  line-height: 50px;
+  width: 95%;
+  font-weight: 300;
+}
+
+.search-btn {
+  color: #8D91BA;
+  float: right;
+  width: 5%;
+  height: 50px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: gray;
+}
+
+.homeBtn {
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  background-color: transparent; 
+  border-style: none;
+  margin: auto;
+  display: flex;
+  font-weight: 300;
+}
+
+.homePageBtnRow {
+  width: 100%;
+  margin: auto;
+}
+
+.homeBtn:hover  {
+  background-color: transparent; 
+  border-style: none;
+  color: #E0B47D;
+  text-decoration: underline;
+}
+
+i:hover {
+  color: #E0B47D;
+}
+
+.searchAndButtons {
+  position: absolute;
+  margin: auto;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 60%;
 }
 
 .listContainer {
   background-color: white;
   overflow: auto;
-  height: 80vh;
+  height: 60vh;
+  padding: 2%;
+  box-shadow: 10px 10px 100px;
+  margin-top: 5%;
 }
 
 .individualPost {
-
+  padding: 1%;
+  transition: background-color 0.5s ease;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .individualPost:hover {
   background-color: lightblue;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.thumbnail {
+  width: 60%;
+  margin: auto;    
+  display: block;
+}
+
+.colOne, .colTwo, .colThree, .contactColTwo {
+  /* border-style: solid; */
+  color: black;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+}
+
+.colTwo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.colTwo:hover {
+  text-decoration: none;
+}
+
+.colThree {
+  font-weight: 800;
+  font-size: 5rem;
+}
+
+.colThree, .colThreeDeleteIcon {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family: 'Roboto', sans-serif;
+  color: #68BB59;
+}
+
+.contactSellerImage {
+  width: 60%;
+  margin: auto;    
+  display: block;
+}
+
+.contactColTwo div {
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: white;
+}
+
+.test {
+  position: absolute;
+  top: 5%;
+  bottom: 5%;
+  left: 5%;
+  right: 5%;
+  background-color: red;
+}
+
+.imgPlaceholder {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+.imgPlaceholder img {
+  width: 100%;
+  height: 100%;
+}
+
+.contactBtn {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.contactBtn a {
+  color: white;
+}
+
+.imageContainer img { 
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.colBookmark {
+  background-color: red;
+}
+
+.rowBookmark {
+  background-color: yellow;
+}
+
+.conBookmark {
+  background-color: green;
 }
 
 @media all and (min-width: 480px) {

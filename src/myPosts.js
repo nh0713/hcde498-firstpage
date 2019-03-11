@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
-import SearchPage from './SearchPage'
-import Error from './Error'
-import LoginCreateAccount from './LoginCreateAccount'
-import SellPage from './SellPage'
 import fire from './config/Fire'
 import SignedInBanner from './SignedInBanner';
 import { Row, Col, Button, Container } from 'react-bootstrap';
@@ -31,16 +27,37 @@ class MyPosts extends Component {
 
     render() {
         let postList = this.state.myPosts.map((post, i) => 
-            <div key={i} className="individualPost mt-3">
-                <div>{this.state.myPosts[i].data().textbookName}</div>
-                <div>{this.state.myPosts[i].data().location}</div>
-                <div>{this.state.myPosts[i].data().price}</div>
-                <div>{this.state.myPosts[i].data().condition}</div>
-             </div>)
+            <Row key={i} className="individualPost mb-4">
+                <Col lg={4} className="colOne">
+                    <img src={this.state.myPosts[i].data().imageDownloadURL} alt="thumbnail" className="thumbnail"></img>
+                </Col>
+                <Col lg={6} className="colTwo">
+                    <div><strong>Textbook Title:</strong> {this.state.myPosts[i].data().textbookName}</div>
+                    <div><strong>Meetup Location:</strong> {this.state.myPosts[i].data().location}</div>
+                    <div><strong>Price:</strong> {this.state.myPosts[i].data().price}</div>
+                    <div><strong>Condition:</strong> {this.state.myPosts[i].data().condition}</div>
+                    <div><strong>Date Posted:</strong> {this.state.myPosts[i].data().datePosted}</div>
+                </Col>
+                <Col className="colThreeDeleteIcon" lg={2}>
+                    <Row>
+                        <Col className="colThreeDeleteIcon mb-2" lg={12}>
+                            <i class="far fa-trash-alt fa-3x"></i>
+                        </Col>
+                        <Col className="colThreeDeleteIcon mt-2" lg={12}>
+                            <div>
+                                <Button role="button" variant="primary">Edit</Button>
+                            </div>
+                        </Col>
+                    </Row>
+                </Col>
+             </Row>)
 
         return (
             <div>
                 <SignedInBanner />
+                <div>
+                    <h1>My Posts</h1>
+                </div>
                 <Container className="listContainer">
                     {postList}
                 </Container>

@@ -7,7 +7,7 @@ import LoginCreateAccount from './LoginCreateAccount'
 import SellPage from './SellPage'
 import fire from './config/Fire'
 import SignedInBanner from './SignedInBanner';
-import { Row, Col, Button, Container, Alert } from 'react-bootstrap';
+import { Row, Col, Container, Button } from 'react-bootstrap';
 
 class SearchResults extends Component {
     constructor(props) {
@@ -23,7 +23,7 @@ class SearchResults extends Component {
     componentDidMount() {
         // console.log(this.props);
         const db = fire.firestore();
-        console.log(this.props.match.params.textbookName);
+        // console.log(this.props.match.params.textbookName);
         const getSearchResults = db.collection(this.props.match.params.textbookName).get().then((snapshot) => {
             this.setState ({
                 searchResults: snapshot.docs,
@@ -36,18 +36,32 @@ class SearchResults extends Component {
     }
 
     render() { 
+        // console.log(this.state.searchResults);
         let searchResults = this.state.searchResults.map((post, i) => 
-        <div key={i} className="individualPost mt-3" onClick={this.resultClicked}>
-            <div>Textbook Name: {this.state.searchResults[i].data().textbookName}</div>
-            <div>Meetup Location: {this.state.searchResults[i].data().location}</div>
-            <div>Price: {this.state.searchResults[i].data().price}</div>
-            <div>Condition: {this.state.searchResults[i].data().condition}</div>
-            <div>Seller Email: {this.state.searchResults[i].data().userID}</div>
-         </div>)
+            // <Link style={{ textDecoration: 'none' }} key={i} to={`/searchResults/${this.state.searchResults[i].data().textbookName}/${i}`} onClick={this.resultClicked}>
+            <Link style={{ textDecoration: 'none' }} key={i} to={`/hcde498-firstpage/searchResults/${this.state.searchResults[i].data().textbookName}/${i}`} onClick={this.resultClicked}>                <Row className="individualPost mb-3">
+                    <Col lg={4} className="colOne">
+                        <img src={this.state.searchResults[i].data().imageDownloadURL} alt="thumbnail" className="thumbnail"></img>
+                    </Col>
+                    <Col lg={6} className="colTwo">
+                        <div><strong>Seller:</strong> {this.state.searchResults[i].data().seller}</div>
+                        <div><strong>Seller Email:</strong> {this.state.searchResults[i].data().userID}</div>
+                        <div><strong>Meetup Location:</strong> {this.state.searchResults[i].data().location}</div>
+                        <div><strong>Condition:</strong> {this.state.searchResults[i].data().condition}</div>
+                        <div><strong>Date Posted:</strong> {this.state.searchResults[i].data().datePosted}</div>
+                    </Col>
+                    <Col lg={2} className="colThree">
+                        <div>{this.state.searchResults[i].data().price}</div>
+                    </Col> 
+                </Row>
+            </Link>)
 
         return (
             <div>
                 <SignedInBanner />
+                <div>
+                    <h1>Search Results for <strong>{this.props.match.params.textbookName}</strong></h1>
+                </div>
                 <Container className="listContainer">
                     {searchResults}
                 </Container>
