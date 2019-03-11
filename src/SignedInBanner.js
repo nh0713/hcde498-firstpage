@@ -30,7 +30,8 @@ class SignedInBanner extends Component {
                         <Button className="homeBtn" variant="info">Account ({this.user.email})</Button>
                     </Col>
                     <Col className="colLogoutAccount" sm={6} md={2} lg={1}>
-                        <Link to='/'>
+                        <Link to='/hcde498-firstpage/'>
+                        {/* <Link to='/'> */}
                             <Button className="homeBtn" variant="dark" onClick={this.logout}>Logout</Button>
                         </Link>
                     </Col>
