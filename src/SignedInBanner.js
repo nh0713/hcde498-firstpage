@@ -21,8 +21,8 @@ class SignedInBanner extends Component {
           <Container fluid>
                 <Row className="banner">
                     <Col sm={12} md={8} lg={9}>
-                    {/* <Link to='/hcde498-firstpage/'> */}
-                        <Link to='/'>
+                    <Link to='/hcde498-firstpage/'>
+                        {/* <Link to='/'> */}
                             <img src={logo} alt="logo"></img>
                         </Link>
                     </Col>
