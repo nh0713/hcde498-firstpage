@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/hcde498-firstpage/static/media/magnifier.64d25256.svg"
   },
   {
-    "revision": "f80aef3d3ca141f19a36",
+    "revision": "f622f390484869159488",
     "url": "/hcde498-firstpage/static/css/main.7fc1ded6.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = [
     "url": "/hcde498-firstpage/static/media/logo.17b4426f.svg"
   },
   {
-    "revision": "f80aef3d3ca141f19a36",
-    "url": "/hcde498-firstpage/static/js/main.f80aef3d.chunk.js"
+    "revision": "f622f390484869159488",
+    "url": "/hcde498-firstpage/static/js/main.f622f390.chunk.js"
   },
   {
     "revision": "d81f9b4a62f242f553b837d55c076a9c",
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/hcde498-firstpage/static/media/college.462cbe68.jpg"
   },
   {
-    "revision": "6ee6c2d33e15ed61ce0235a5050ffbcf",
+    "revision": "0a1d29484d5750071836c8cc7db78909",
     "url": "/hcde498-firstpage/index.html"
   }
 ];
