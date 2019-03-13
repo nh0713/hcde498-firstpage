@@ -17,29 +17,30 @@ class App extends Component {
 
   render() {
     return (
-      // <Router>
-      //   <Switch>
-      //     <Route path='/hcde498-firstpage/' component={LoginOrSearchPage} exact/>
-      //     <Route path='/hcde498-firstpage/searchPage' component={SearchPage} />
-      //     <Route path='/hcde498-firstpage/sellPage' component={SellPage} />
-      //     <Route path='/hcde498-firstpage/myPosts' component={MyPosts} />
-      //     <Route path='/hcde498-firstpage/searchResults/:textbookName' component={SearchResults} />
-      //     <Route path='/hcde498-firstpage/searchResults/:textbookName/:index' component={ContactSeller} />
-      //     <Route component={Error} />
-      //   </Switch>
-      // </Router>
       <Router>
         <Switch>
-          <Route path='/' component={LandingPage} exact/>
-          <Route path='/getStarted' component={LoginOrSearchPage} exact/>
-          <Route path='/searchPage' component={SearchPage} />
-          <Route path='/sellPage' component={SellPage} />
-          <Route path='/myPosts' component={MyPosts} />
-          <Route path='/searchResults/:textbookName' component={SearchResults} exact/>
-          <Route path='/searchResults/:textbookName/:index' component={ContactSeller} />
+          <Route path='/hcde498-firstpage/' component={LandingPage} exact/>
+          <Route path='/hcde498-firstpage/getStarted' component={LoginOrSearchPage} exact/>
+          <Route path='/hcde498-firstpage/searchPage' component={SearchPage} />
+          <Route path='/hcde498-firstpage/sellPage' component={SellPage} />
+          <Route path='/hcde498-firstpage/myPosts' component={MyPosts} />
+          <Route path='/hcde498-firstpage/searchResults/:textbookName' component={SearchResults} />
+          <Route path='/hcde498-firstpage/searchResults/:textbookName/:index' component={ContactSeller} />
           <Route component={Error} />
         </Switch>
       </Router>
+      // <Router>
+      //   <Switch>
+      //     <Route path='/' component={LandingPage} exact/>
+      //     <Route path='/getStarted' component={LoginOrSearchPage} exact/>
+      //     <Route path='/searchPage' component={SearchPage} />
+      //     <Route path='/sellPage' component={SellPage} />
+      //     <Route path='/myPosts' component={MyPosts} />
+      //     <Route path='/searchResults/:textbookName' component={SearchResults} exact/>
+      //     <Route path='/searchResults/:textbookName/:index' component={ContactSeller} />
+      //     <Route component={Error} />
+      //   </Switch>
+      // </Router>
     );
   }
 }
