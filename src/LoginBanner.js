@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, FormGroup, FormControl, FormLabel, Container, Row, Col } from "react-bootstrap";
-import logo from './logo.svg';
+import logo from './reading.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
 
@@ -10,8 +10,8 @@ class LoginBanner extends Component {
         <Container fluid>
           <Row className="banner">
               <Col sm={12} md={8} lg={9}>
-                <Link to='/hcde498-firstpage/'>
-                  {/* <Link to='/'> */}
+                {/* <Link to='/hcde498-firstpage/'> */}
+                  <Link to='/'>
                     <img src={logo} alt="logo"></img>
                 </Link>
               </Col>

@@ -43,8 +43,8 @@ class SearchPage extends Component {
           <form>
             <input className="search-txt" type="text" placeholder="Type Textbook Title" aria-label="Search" onChange={this.searchInput}></input>  
           </form>
-          <Link to={`/hcde498-firstpage/searchResults/${this.state.textbookName}`}>
-          {/* <Link to={`/searchResults/${this.state.textbookName}`}> */}
+          {/* <Link to={`/hcde498-firstpage/searchResults/${this.state.textbookName}`}> */}
+          <Link to={`/searchResults/${this.state.textbookName}`}>
             {/* <a className="search-btn" href='#' onClick={this.searchClicked}> */}
               <i className="search-btn fas fa-search fa-2x"></i>
             {/* </a>  */}
@@ -69,14 +69,14 @@ class SearchPage extends Component {
         <Container className="mt-5">
           <Row className="homePageBtnRow">
             <Col sm={12} md={6} lg={4}>
-              {/* <Link to='/myPosts'> */}
-              <Link to='/hcde498-firstpage/myPosts'>
+              <Link to='/myPosts'>
+              {/* <Link to='/hcde498-firstpage/myPosts'> */}
                 <SearchPageButton type="My Posts" />
               </Link>
             </Col>
             <Col sm={12} md={6} lg={4}>
-              {/* <Link to="/sellPage"> */}
-              <Link to='/hcde498-firstpage/sellPage'>
+              <Link to="/sellPage">
+              {/* <Link to='/hcde498-firstpage/sellPage'> */}
                 <SearchPageButton type="Sell" />
               </Link>
             </Col>
