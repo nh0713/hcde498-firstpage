@@ -26,7 +26,7 @@ class App extends Component {
           <Route path='/hcde498-firstpage/myPosts' component={MyPosts} />
           <Route path='/hcde498-firstpage/searchResults/:textbookName' component={SearchResults} exact/>
           <Route path='/hcde498-firstpage/searchResults/:textbookName/:index' component={ContactSeller} exact/>
-          <Route path='/hcde498-firstpage/:textbookName/:sellerUserID' component={ContactSeller} exact/>
+          <Route path='/hcde498-firstpage/:textbookName/:sellerUserID' component={RecentSearchContactSeller} exact/>
           <Route component={Error} />
         </Switch>
       </Router>
