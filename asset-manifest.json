@@ -1,16 +1,15 @@
 {
-  "main.css": "/hcde498-firstpage/static/css/main.de7d9b91.chunk.css",
-  "main.js": "/hcde498-firstpage/static/js/main.c54b61ef.chunk.js",
-  "main.js.map": "/hcde498-firstpage/static/js/main.c54b61ef.chunk.js.map",
+  "main.css": "/hcde498-firstpage/static/css/main.8e2228bb.chunk.css",
+  "main.js": "/hcde498-firstpage/static/js/main.a912e1b0.chunk.js",
+  "main.js.map": "/hcde498-firstpage/static/js/main.a912e1b0.chunk.js.map",
   "runtime~main.js": "/hcde498-firstpage/static/js/runtime~main.19765f20.js",
   "runtime~main.js.map": "/hcde498-firstpage/static/js/runtime~main.19765f20.js.map",
-  "static/js/2.85d6add1.chunk.js": "/hcde498-firstpage/static/js/2.85d6add1.chunk.js",
-  "static/js/2.85d6add1.chunk.js.map": "/hcde498-firstpage/static/js/2.85d6add1.chunk.js.map",
+  "static/js/2.44459ddf.chunk.js": "/hcde498-firstpage/static/js/2.44459ddf.chunk.js",
+  "static/js/2.44459ddf.chunk.js.map": "/hcde498-firstpage/static/js/2.44459ddf.chunk.js.map",
   "index.html": "/hcde498-firstpage/index.html",
-  "precache-manifest.d47772798a422c26d49c4f12c0bed0d0.js": "/hcde498-firstpage/precache-manifest.d47772798a422c26d49c4f12c0bed0d0.js",
+  "precache-manifest.eed6db7761582670bd9e4ccd9e28967c.js": "/hcde498-firstpage/precache-manifest.eed6db7761582670bd9e4ccd9e28967c.js",
   "service-worker.js": "/hcde498-firstpage/service-worker.js",
-  "static/css/main.de7d9b91.chunk.css.map": "/hcde498-firstpage/static/css/main.de7d9b91.chunk.css.map",
+  "static/css/main.8e2228bb.chunk.css.map": "/hcde498-firstpage/static/css/main.8e2228bb.chunk.css.map",
   "static/media/college.jpg": "/hcde498-firstpage/static/media/college.e4d4a900.jpg",
-  "static/media/openBook.jpg": "/hcde498-firstpage/static/media/openBook.fe508a8f.jpg",
   "static/media/reading.svg": "/hcde498-firstpage/static/media/reading.e8705c2b.svg"
 }
