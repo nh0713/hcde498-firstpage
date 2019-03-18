@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import SearchPage from './SearchPage'
 import Error from './Error'
 import LoginCreateAccount from './LoginCreateAccount'
@@ -9,7 +9,7 @@ import MyPosts from './myPosts'
 import SearchResults from './searchResults'
 import ContactSeller from './contactSeller'
 import LandingPage from './LandingPage'
-import Bookmarks from './bookmarks'
+import RecentSearchContactSeller from './RecentSearchContactSeller'
 
 import fire from './config/Fire'
 
@@ -26,6 +26,7 @@ class App extends Component {
           <Route path='/hcde498-firstpage/myPosts' component={MyPosts} />
           <Route path='/hcde498-firstpage/searchResults/:textbookName' component={SearchResults} />
           <Route path='/hcde498-firstpage/searchResults/:textbookName/:index' component={ContactSeller} />
+          <Route path='/hcde498-firstpage/:textbookName/:sellerUserID' component={ContactSeller} />
           <Route component={Error} />
         </Switch>
       </Router>
@@ -37,7 +38,8 @@ class App extends Component {
       //     <Route path='/sellPage' component={SellPage} />
       //     <Route path='/myPosts' component={MyPosts} />
       //     <Route path='/searchResults/:textbookName' component={SearchResults} exact/>
-      //     <Route path='/searchResults/:textbookName/:index' component={ContactSeller} />
+      //     <Route path='/searchResults/:textbookName/:index' component={ContactSeller} exact/>
+      //     <Route path='/:textbookName/:sellerUserID' component={RecentSearchContactSeller} exact/>
       //     <Route component={Error} />
       //   </Switch>
       // </Router>
@@ -46,8 +48,8 @@ class App extends Component {
 }
 
 class LoginOrSearchPage extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = ({
       user: null,
     });
@@ -58,6 +60,7 @@ class LoginOrSearchPage extends Component {
     this.authListener();
   }
 
+  //Check if user is already logged in
   authListener() {
     fire.auth().onAuthStateChanged((user) => {
       console.log(user);
@@ -73,6 +76,7 @@ class LoginOrSearchPage extends Component {
 
   render() {
     return (
+      // If user is logged in go to SearchPage, if not go to LoginCreateAccount
       this.state.user ? ( <SearchPage/>) : (<LoginCreateAccount />)
     );
   }

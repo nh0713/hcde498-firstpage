@@ -110,67 +110,66 @@ class SellPage extends Component {
         return (
             <div>
                 <SignedInBanner />
-                <Container>
+                <Container className="containerSell">
+                <div>
+                    <h1>Create Sale</h1>
+                </div>
                     <Row>
                         <Col lg={6}>
                             <input type="file" onChange={this.fileSelectedHandler}></input>
-                            <Button onClick={this.fileUploadHandler}>Upload</Button>
+                            <Button onClick={this.fileUploadHandler} className="upload">Upload</Button>
                             <div className='imgPlaceholder mt-4'>
                                 <img src={this.state.imageDownloadURL} alt="textbook image"></img>
                             </div>
                         </Col>
-                        <Col lg={6}>
-                            <div className="login">
-                                <form className="searchPage">
-                                    <FormGroup controlId="textbookName" size="large">
-                                        <FormLabel>Textbook Name</FormLabel>
-                                        <FormControl
-                                        type="text"
-                                        name="textbookName"
-                                        onChange={this.handleChange}
-                                        />
-                                    </FormGroup>
-                                    <FormGroup controlId="location" size="large">
-                                        <FormLabel>Location</FormLabel>
-                                        <FormControl
-                                        type="text"
-                                        name="location"
-                                        onChange={this.handleChange}
-                                        />
-                                    </FormGroup>
-                                    <FormGroup controlId="price" size="large">
-                                        <FormLabel>Price</FormLabel>
-                                        <FormControl
-                                        type="text"
-                                        name="price"
-                                        onChange={this.handleChange}
-                                        />
-                                    </FormGroup>
-                                    <FormGroup controlId="condition" size="large">
-                                        <FormLabel>Condition</FormLabel>
-                                        <FormControl as="select" onChange={this.handleChange} name="condition">
-                                            <option value="1 (Poor)">1 (Poor)</option>
-                                            <option value="2 (Decent)">2 (Decent)</option>
-                                            <option value="3 (Used)">3 (Used)</option>
-                                            <option value="4 (Ligtly Used)">4 (Ligtly Used)</option>
-                                            <option value="5 (Perfect)">5 (Perfect)</option>
-                                        </FormControl>
-                                    </FormGroup>
-                                    <Link to='myPosts'>
-                                    {/* <Link to='/hcde498-firstpage/myPosts'> */}
-                                        <Button
-                                            block
-                                            size="large"
-                                            onClick={this.postTextbook}
-                                        >
-                                            Post
-                                    </Button>
-                                    </Link>
-                                </form>                
-                            </div>
+                        <Col lg={6} className="formGroup">
+                            <FormGroup controlId="textbookName" size="large">
+                                <FormLabel>Textbook Name</FormLabel>
+                                <FormControl
+                                type="text"
+                                name="textbookName"
+                                onChange={this.handleChange}
+                                />
+                            </FormGroup>
+                            <FormGroup controlId="location" size="large">
+                                <FormLabel>Location</FormLabel>
+                                <FormControl
+                                type="text"
+                                name="location"
+                                onChange={this.handleChange}
+                                />
+                            </FormGroup>
+                            <FormGroup controlId="price" size="large">
+                                <FormLabel>Price</FormLabel>
+                                <FormControl
+                                type="text"
+                                name="price"
+                                onChange={this.handleChange}
+                                />
+                            </FormGroup>
+                            <FormGroup controlId="condition" size="large">
+                                <FormLabel>Condition</FormLabel>
+                                <FormControl as="select" onChange={this.handleChange} name="condition">
+                                    <option value="1 (Poor)">1 (Poor)</option>
+                                    <option value="2 (Decent)">2 (Decent)</option>
+                                    <option value="3 (Used)">3 (Used)</option>
+                                    <option value="4 (Ligtly Used)">4 (Ligtly Used)</option>
+                                    <option value="5 (Perfect)">5 (Perfect)</option>
+                                </FormControl>
+                            </FormGroup>
+                            <Link to='myPosts'>
+                            {/* <Link to='/hcde498-firstpage/myPosts'> */}
+                                <Button
+                                    block
+                                    size="large"
+                                    onClick={this.postTextbook}
+                                    className="post"
+                                >
+                                    Post
+                            </Button>
+                            </Link>              
                         </Col>
                     </Row>
-
                 </Container>
             </div>
         );

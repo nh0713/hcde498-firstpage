@@ -20,19 +20,20 @@ class SignedInBanner extends Component {
       return (
           <Container fluid>
                 <Row className="banner">
-                    <Col sm={12} md={8} lg={9}>
+                    <Col sm={12} md={4} lg={10}>
                     {/* <Link to='/hcde498-firstpage/searchPage'> */}
                         <Link to='/searchPage'>
                             <img src={logo} alt="logo"></img>
                         </Link>
                     </Col>
-                    <Col className="colLogoutAccount" sm={6} md={2} lg={2}>
-                        <Button className="homeBtn" variant="info">Account ({this.user.email})</Button>
+                    <Col className="colLogoutAccount" sm={6} md={4} lg={1}>
+                        <i class="far fa-user fa-3x"></i>
+                        {/* <Button className="btnBanner">Account ({this.user.email})</Button> */}
                     </Col>
-                    <Col className="colLogoutAccount" sm={6} md={2} lg={1}>
+                    <Col className="colLogoutAccount" sm={6} md={4} lg={1}>
                         {/* <Link to='/hcde498-firstpage/'> */}
                         <Link to='/'>
-                            <Button className="homeBtn" variant="dark" onClick={this.logout}>Logout</Button>
+                            <i class="fas fa-sign-out-alt fa-3x" onClick={this.logout}></i>
                         </Link>
                     </Col>
                 </Row>

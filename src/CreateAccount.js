@@ -20,10 +20,12 @@ class CreateAccount extends Component {
           };
     }
 
+    // Handle user input
     handleChange(e) {
         this.setState({ [e.target.name]: e.target.value });
     }
 
+    // Create account based off of user input
     createAccount(e){
       const db = fire.firestore();
         const userInfo = db.collection(this.state.email + 'info').add({
@@ -31,6 +33,7 @@ class CreateAccount extends Component {
             userID: this.state.email,
             college: this.state.collegeYouAttend,
         });
+      // Check if passwords match 
       if(this.state.password === this.state.passwordRetype){
           e.preventDefault();
           fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
@@ -51,7 +54,7 @@ class CreateAccount extends Component {
           <div className="login">
             <form onSubmit={this.createAccount}>
               <FormGroup controlId="email" size="large">
-                <FormLabel>Email</FormLabel>
+                <FormLabel className="formLabel">Email</FormLabel>
                 <FormControl
                   autoFocus
                   type="email"
@@ -60,7 +63,7 @@ class CreateAccount extends Component {
                 />
               </FormGroup>
               <FormGroup controlId="password" size="large"> 
-                <FormLabel>Password</FormLabel>
+                <FormLabel className="formLabel">Password</FormLabel>
                 <FormControl
                   type="password"
                   name="password"
@@ -68,7 +71,7 @@ class CreateAccount extends Component {
                 />
               </FormGroup>
               <FormGroup controlId="password" size="large"> 
-                <FormLabel>Retype Password</FormLabel>
+                <FormLabel className="formLabel">Retype Password</FormLabel>
                 <FormControl
                   type="password"
                   name="passwordRetype"
@@ -76,7 +79,7 @@ class CreateAccount extends Component {
                 />
               </FormGroup>
               <FormGroup controlId="displayName" size="large"> 
-                <FormLabel>First Name</FormLabel>
+                <FormLabel className="formLabel">First Name</FormLabel>
                 <FormControl
                   type="text"
                   name="displayName"
@@ -84,7 +87,7 @@ class CreateAccount extends Component {
                 />
               </FormGroup>
               <FormGroup controlId="college" size="large"> 
-                <FormLabel>College you attend</FormLabel>
+                <FormLabel className="formLabel">College you attend</FormLabel>
                 <FormControl
                   type="text"
                   name="collegeYouAttend"
@@ -95,6 +98,7 @@ class CreateAccount extends Component {
                 block
                 size="large"
                 type="submit"
+                className="btnSubmitCredentials"
                 onClick={this.createAccount}
               >
                 Create Account

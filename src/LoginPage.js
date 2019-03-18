@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
 import './App.css';
-import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import fire from './config/Fire';
 
 class LoginPage extends Component {
@@ -14,10 +13,13 @@ class LoginPage extends Component {
         password: ''
         };
     }
+
+    // Handle change from user input
     handleChange(e) {
         this.setState({ [e.target.name]: e.target.value });
         }
-    
+
+    // validate login credentials
     login(e) {
         e.preventDefault();
         fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((u)=>{
@@ -33,7 +35,7 @@ class LoginPage extends Component {
           <div className="login">
             <form onSubmit={this.handleSubmit}>
               <FormGroup controlId="email" size="large">
-                <FormLabel>Email</FormLabel>
+                <FormLabel className="formLabel">Email</FormLabel>
                 <FormControl
                   autoFocus
                   type="email"
@@ -42,7 +44,7 @@ class LoginPage extends Component {
                 />
               </FormGroup>
               <FormGroup controlId="password" size="large"> 
-                <FormLabel>Password</FormLabel>
+                <FormLabel className="formLabel">Password</FormLabel>
                 <FormControl
                   type="password"
                   name="password"
@@ -53,6 +55,7 @@ class LoginPage extends Component {
                 block
                 size="large"
                 type="submit"
+                className="btnSubmitCredentials"
                 onClick={this.login}
               >
                 Login

@@ -1,51 +1,11 @@
-/* img {
-  width: 80%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-} */
-
-.outer {
-  background-image: url(college.jpg);
-  background-size: initial;
-  background-position: 100% 0%;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.inner {
-  background-color: #f3f2ef;
-  border-radius: 3px;
-  width: 30%;
-  height: 50%;
-  text-align: center;
-}
-
-.inner img {
-  width: 40%
-}
-
-.inner h1 {
-  color: #1c7ed6;
-}
-
-.logoTest {
-  width: 100%;
-}
-
-.topTest {
-  width: 100%;
-  height: 70px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .landingPageBanner, .landingPageBanner img {
   width: 100%;
-}
-
-.college {
-  opacity: .7;
 }
 
 .logo {
@@ -74,13 +34,6 @@
   color: #A8A8A8;
 }
 
-.btnGetStarted {
-  background-color: #ffca4f;
-  color: black;
-  font-weight: 500;
-  border-style: none;
-}
-
 .whyUse h3 {
   padding-top: 2%;
 }
@@ -106,7 +59,7 @@ ul {
   margin: auto;
 }
 
-li {
+.whyUse li {
   margin-top: 10%;
 }
 
@@ -117,7 +70,7 @@ li {
 }
 
 .card-title {
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .card-body {
@@ -125,17 +78,37 @@ li {
 }
 
 hr {
-  margin-top: 2%;
-  margin-bottom: 2%;
+  margin-top: 5%;
+  margin-bottom: 5%;
   border: 0;
   height: 1px;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.howDoesItWork {
+  margin-bottom: 5%;
+}
+
+.howDoesItWork .row {
+  padding-bottom: 5%;
+}
+
+.stickyFooter {
+  background-color: #1c7ed6;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+.footer {
+  background-color: #1c7ed6;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
 }
 
 html,body { height:100%; }
@@ -148,21 +121,18 @@ h1, h2, .tabs a, .top h1, .top h4 {
   font-family: 'Work Sans', sans-serif;
 }
 
-.search-txt, .homeBtn, .tab, .testCol, .btnGetStarted, .whyUse, .howDoesItWork {
+.search-txt, .homeBtn, .tab, .testCol, .btnLoginCreateAccount, .whyUse, .howDoesItWork, .formGroup {
   font-family: 'Roboto', sans-serif;
 }
 
 .banner {
-  padding: 10px;
-  /* display: flex;
-  align-items: left;  
-  text-align: left; */
+  padding: 15px;
   background-color: #1c7ed6;
 }
 
 .banner img {
   float: left;
-  width: 4%;
+  width: 60px;
 }
 
 .banner h1 {
@@ -173,23 +143,47 @@ h1, h2, .tabs a, .top h1, .top h4 {
   margin: 10px;
 }
 
+.btnBanner {
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  background-color: transparent; 
+  border-style: none;
+  margin: auto;
+  display: flex;
+  font-weight: 300;
+}
+
 .colLogoutAccount {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.tabs {
+.colLogoutAccount i {
+  color: white;
+}
+
+/* tab styles */
+
+.tabsContainer {
   width: 100%;
+  margin-top: 10%;
+  align-items: center;
 }
 
 .tabs a {
-  color: white;
+  color: #1c7ed6;
   font-weight: 500;
+  font-size: 20px;
+}
+
+.tabs a:hover {
+  border-style: none;
 }
 
 .tab {
-  background-color: white;
+  background-color: #1c7ed6;
   font-weight: 300;
   box-shadow: 10px 10px 100px;
 }
@@ -199,70 +193,24 @@ h1, h2, .tabs a, .top h1, .top h4 {
   margin: auto;
 }
 
-.top h1 {
-  color:white;
+.btnLoginCreateAccount {
+  margin-top: 5%;
+  text-align: center;
+  background-color: #ffca4f;
+  color: black;
   font-weight: 500;
-  text-align: center;
-}
-
-.top h4 {
-  color:white;
-  font-weight: 200;
-  text-align: center;
-}
-
-.top h1, .top h4 {
-  margin: 0;
-}
-
-.top img{
-  width: 70px;
-}
-
-.rowTest img{
-  float: left;
-}
-
-.rowTest {
-  padding: 1%;
-}
-
-.testContainer {
-  background-color: white;
-  height: 100%;
-  width: 80%;
-  padding-top: 5%;
-  padding-bottom: 5%;
-  padding-left: 3%;
-  padding-right: 3%;
-}
-
-.colBackgroundColor {
-  background-color: #d6ebf2;
-}
-
-.testCol {
-  margin-bottom: 5%;
-  margin-top: 5%;
-  text-align: center;
-  font-size: 1.5rem;
-}
-
-.testCol img{
-  width: 60%;
-}
-
-.btnGetStarted {
-  margin-top: 5%;
-  text-align: center;
+  border-style: none;
 }
 
 h1 {
   font-weight: 300;
   text-align: center;
-  color: white;
-  margin: 20px;
+  color: black;
+  margin-bottom: 20px;
 }
+
+
+/* login/create account styles */
 
 .login {
   color: black;
@@ -272,12 +220,25 @@ h1 {
   font-size: 1.2rem;
 }
 
+.formLabel {
+  color: white;
+}
+
+.btnSubmitCredentials {
+  background-color: #ffca4f;
+  color: black;
+}
+
+.btnSubmitCredentials:hover {
+  background-color: #ffca4f;
+}
+
 .createAccount {
   text-align: center;
   display: block;
 }
 
-.loginCreateAccount {
+/* .loginCreateAccount {
   background-color: white;
   width: 60%;
   position: absolute;
@@ -285,14 +246,15 @@ h1 {
   top: 50%; left: 50%;
   transform: translate(-50%,-50%);
   box-shadow: 10px 10px 100px;
-}
+} */
 
 .search-box {
   background: white;
   width: 100%;
   height: 70px;
   padding: 10px;
-  box-shadow: 7px 5px 20px;
+  box-shadow: 5px 5px 20px;
+
 }
 
 .search-txt {
@@ -324,47 +286,75 @@ h1 {
 }
 
 .homeBtn {
+  justify-content: center;
   text-align: center;
-  color: white;
-  font-size: 1.5rem;
-  background-color: transparent; 
-  border-style: none;
   margin: auto;
   display: flex;
   font-weight: 300;
+  width: 60%;
+}
+
+.homeBtn, .upload, .post {
+  color: black;
+  font-size: 1.5rem;
+  background-color: #ffca4f; 
+  border-style: none;
 }
 
 .homePageBtnRow {
   width: 100%;
   margin: auto;
+  margin-top: 7%;
 }
 
-.homeBtn:hover  {
-  background-color: transparent; 
+.homeBtn:hover, .upload:hover, .post:hover  {
+  background-color: #ffca4f; 
   border-style: none;
-  color: #E0B47D;
+  color: white;
   text-decoration: underline;
 }
 
 i:hover {
-  color: #E0B47D;
+  color: #ffca4f;
 }
 
 .searchAndButtons {
-  position: absolute;
-  margin: auto;
-  top: 50%; left: 50%;
-  transform: translate(-50%,-50%);
-  width: 60%;
+  width: 75%;
+  text-align: center;
+}
+
+.searchAndButtonsContainer {
+  background-color: #1c7ed6;
+  height: 400px;
+  padding: 5%;
+}
+
+.searchAndButtons img {
+  margin-bottom: 10%;
+  width: 20%;
+}
+
+.recentSearchListContainer {
+  background-color: white;
+  overflow: auto;
+  height: 60vh;
+  box-shadow: 10px 10px 100px;
+}
+
+.recentSearchListContainer h1, .listContainer h1 {
+  padding: 2%;
+}
+
+.recentSearchListContainer, .listContainer {
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .listContainer {
   background-color: white;
   overflow: auto;
-  height: 60vh;
-  padding: 2%;
+  height: 70vh;
   box-shadow: 10px 10px 100px;
-  margin-top: 5%;
 }
 
 .individualPost {
@@ -385,10 +375,13 @@ i:hover {
 }
 
 .colOne, .colTwo, .colThree, .contactColTwo {
-  /* border-style: solid; */
   color: black;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
+}
+
+.colOne {
+  /* background-color: red; */
 }
 
 .colTwo {
@@ -416,30 +409,26 @@ i:hover {
 
 .contactSellerImage {
   width: 60%;
-  margin: auto;    
+  margin: auto;  
   display: block;
 }
 
-.contactColTwo div {
+.contactColTwo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
   font-size: 25px;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  color: white;
-}
-
-.test {
-  position: absolute;
-  top: 5%;
-  bottom: 5%;
-  left: 5%;
-  right: 5%;
-  background-color: red;
 }
 
 .imgPlaceholder {
   width: 100%;
-  height: 100%;
-  background-color: white;
+  height: 600px;
+  border-color: lightgray;
+  border-style: solid;
+  border-width: 2px
 }
 
 .imgPlaceholder img {
@@ -458,20 +447,16 @@ i:hover {
 
 .imageContainer img { 
   margin: auto;
-  margin-top: 5%;
-  margin-bottom: 5%;
 }
 
-.colBookmark {
-  background-color: red;
+.containerSell {
+  margin-top: 2%;
 }
 
-.rowBookmark {
-  background-color: yellow;
-}
-
-.conBookmark {
-  background-color: green;
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @media all and (min-width: 480px) {

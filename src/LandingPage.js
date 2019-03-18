@@ -1,17 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
-import SearchPage from './SearchPage'
-import Error from './Error'
-import LoginCreateAccount from './LoginCreateAccount'
-import SellPage from './SellPage'
-import MyPosts from './myPosts'
-import SearchResults from './searchResults'
-import ContactSeller from './contactSeller'
 import logo from './reading.svg'
-import openBook from './openBook.jpg'
 import college from './college.jpg'
-import { Container, Row, Col, Button, Card } from "react-bootstrap";
+import { Container, Row, Col, Button, Card, Tabs, Tab } from "react-bootstrap";
+import StickyFooter from './StickyFooter'
 
 class LandingPage extends Component {
     constructor(props){
@@ -39,14 +32,8 @@ class LandingPage extends Component {
     render() {
         return (
             <div>
-                {/* <div className="outer">
-                    <div className="inner">
-                        <img src={logo} alt="logo"></img>
-                        <h1>Textbook Friends</h1>
-                    </div>
-                </div> */}
                 <div className="landingPageBanner">
-                    <img src={college} alt="Landing Page Banner" className="college"></img>
+                    <img src={college} alt="Landing Page Banner"></img>
                     <div className="logo">
                         <Row>
                             <Col xs={6} sm={6} md={6} lg={12}>
@@ -55,8 +42,9 @@ class LandingPage extends Component {
                             </Col>
                             <Col xs={6} sm={6} md={6} lg={12}>
                                 <h2>Buy and Sell Textbooks Locally</h2>
-                                <Link to="/getStarted">
-                                    <Button className="btnGetStarted" size="lg">Get Started</Button>
+                                <Link to="/hcde498-firstpage/getStarted">
+                                {/* <Link to="/getStarted"> */}
+                                    <Button className="btnLoginCreateAccount" size="lg">Login/Create Account</Button>
                                 </Link>
                             </Col>
                         </Row>
@@ -73,7 +61,7 @@ class LandingPage extends Component {
                                         <Card.Title>Cheaper</Card.Title>
                                         <Card.Text>
                                             <ul>
-                                                <li>College students sell their unused textbooks cheaper than used textbook websites</li>
+                                                <li>Cheaper than used textbook websites</li>
                                                 <li>No shipping fees</li>
                                             </ul>
                                         </Card.Text>
@@ -103,6 +91,7 @@ class LandingPage extends Component {
                                             <ul>
                                                 <li>No more long lines</li>
                                                 <li>Meet on campus</li>
+                                                <li>Searching for textbooks is simple</li>
                                             </ul>
                                         </Card.Text>
                                     </Card.Body>
@@ -116,152 +105,107 @@ class LandingPage extends Component {
                     <h3>
                         How Does It Work?
                     </h3>
-
+                    <Tabs className="tabs" defaultActiveKey="Buy">
+                        <Tab className="tab" eventKey="Buy" title="Buy">
+                            <h1>Buy</h1>
+                            <Container>
+                                <Row> 
+                                    <Col lg={3}>
+                                        <Card>
+                                            <Card.Body>
+                                                <Card.Title>1</Card.Title>
+                                                <Card.Text>
+                                                    Search for textbooks
+                                                </Card.Text>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col lg={3}>
+                                        <Card>
+                                            <Card.Body>
+                                                <Card.Title>2</Card.Title>
+                                                <Card.Text>
+                                                    Contact Seller
+                                                </Card.Text>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col lg={3}>
+                                        <Card>
+                                            <Card.Body>
+                                                <Card.Title>3</Card.Title>
+                                                <Card.Text>
+                                                    Meetup Nearby
+                                                </Card.Text>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col lg={3}>
+                                        <Card>
+                                            <Card.Body>
+                                                <Card.Title>4</Card.Title>
+                                                <Card.Text>
+                                                    Start Studying
+                                                </Card.Text>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                </Row>
+                            </Container>
+                        </Tab>
+                        <Tab className="tab" eventKey="Sell" title="Sell">
+                            <h1>Sell</h1>
+                            <Container>
+                                <Row> 
+                                    <Col lg={3}>
+                                        <Card>
+                                            <Card.Body>
+                                                <Card.Title>1</Card.Title>
+                                                <Card.Text>
+                                                    Post Textbook For Sale
+                                                </Card.Text>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col lg={3}>
+                                        <Card>
+                                            <Card.Body>
+                                                <Card.Title>2</Card.Title>
+                                                <Card.Text>
+                                                    Wait For Eager Buyers to Contact You
+                                                </Card.Text>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col lg={3}>
+                                        <Card>
+                                            <Card.Body>
+                                                <Card.Title>3</Card.Title>
+                                                <Card.Text>
+                                                    Meetup Nearby
+                                                </Card.Text>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                    <Col lg={3}>
+                                        <Card>
+                                            <Card.Body>
+                                                <Card.Title>4</Card.Title>
+                                                <Card.Text>
+                                                    Spend your MONEY
+                                                </Card.Text>
+                                            </Card.Body>
+                                        </Card>
+                                    </Col>
+                                </Row>
+                            </Container>
+                        </Tab>
+                    </Tabs>
                 </div>
+                <StickyFooter />
             </div>
         );
     }
 }
-
-class LandingPageBanner extends Component {
-    // Math.floor(this.state.seconds /10 % 2) === 0 ? ( <BuyerProcess/>) : (<SellerProcess />)
-    render() {
-        return (
-            <div></div>
-            // <Container fluid className='top'>
-            //     <Row className='rowTest'>
-            //         <Col sm={3} md={3} lg={12}>
-            //             <img src={logo} alt="logo"></img>
-
-            //             <div>
-            //                 <h1>Textbook Friends</h1>
-            //                 <h4>Buy and sell textbooks locally</h4>
-            //             </div>
-            //         </Col>
-            //     </Row>
-            // </Container>
-        );
-    }
-}
-
-// class BuyerProcess extends Component {
-//     render() {
-//         return(
-//             <div>
-//                 <LandingPageBanner />
-//                 <img src={college}></img>
-//                 <Container fluid className="testContainer">
-//                     <Row>
-//                         <Col lg={3} className="colBackgroundColor">
-//                             <Row>
-//                                 <Col lg={12} className="testCol">      
-//                                     <img src={searchIcon}></img>
-//                                 </Col>
-//                                 <Col lg={12} className="testCol">
-//                                     <div>Search for a textbook</div>
-//                                 </Col>
-//                             </Row>
-//                         </Col>
-//                         <Col lg={3}>
-//                             <Row>
-//                                 <Col lg={12} className="testCol">     
-//                                     <img src={contactIcon}></img>
-//                                 </Col>
-//                                 <Col lg={12} className="testCol">
-//                                     <div>Send a message</div>
-//                                 </Col>
-//                             </Row>
-//                         </Col>
-//                         <Col lg={3}>
-//                             <Row>
-//                                 <Col lg={12} className="testCol">     
-//                                     <img src={handshakeIcon}></img>
-//                                 </Col>
-//                                 <Col lg={12} className="testCol">
-//                                     <div>Meetup</div>
-//                                 </Col>
-//                             </Row>
-//                         </Col>
-//                         <Col lg={3} className="">
-//                             <Row>
-//                                 <Col lg={12} className="testCol">     
-//                                     <img src={learningIcon}></img>
-//                                 </Col>
-//                                 <Col lg={12} className="testCol">
-//                                     <div>Take your textbook home</div>
-//                                 </Col>
-//                             </Row>
-//                         </Col>
-//                     </Row>
-//                     <Row>
-//                         <Col className="btnGetStarted">
-//                             <Button>Get Started</Button>
-//                         </Col>
-//                     </Row>
-//                 </Container>
-//             </div>
-//         );
-//     }
-// }
-
-// class SellerProcess extends Component {
-//     render() {
-//         return(
-//             <div>
-//                 <LandingPageBanner />
-//                 <img src={college}></img>
-//                 <Container fluid className="testContainer">
-//                     <Row>
-//                         <Col lg={3} className="colBackgroundColor">
-//                             <Row>
-//                                 <Col lg={12} className="testCol">      
-//                                     <img src={searchIcon}></img>
-//                                 </Col>
-//                                 <Col lg={12} className="testCol">
-//                                     <div>Post Textbook for Sale</div>
-//                                 </Col>
-//                             </Row>
-//                         </Col>
-//                         <Col lg={3}>
-//                             <Row>
-//                                 <Col lg={12} className="testCol">     
-//                                     <img src={contactIcon}></img>
-//                                 </Col>
-//                                 <Col lg={12} className="testCol">
-//                                     <div>Send a message</div>
-//                                 </Col>
-//                             </Row>
-//                         </Col>
-//                         <Col lg={3}>
-//                             <Row>
-//                                 <Col lg={12} className="testCol">     
-//                                     <img src={handshakeIcon}></img>
-//                                 </Col>
-//                                 <Col lg={12} className="testCol">
-//                                     <div>Meetup</div>
-//                                 </Col>
-//                             </Row>
-//                         </Col>
-//                         <Col lg={3} className="">
-//                             <Row>
-//                                 <Col lg={12} className="testCol">     
-//                                     <img src={learningIcon}></img>
-//                                 </Col>
-//                                 <Col lg={12} className="testCol">
-//                                     <div>Take your textbook home</div>
-//                                 </Col>
-//                             </Row>
-//                         </Col>
-//                     </Row>
-//                     <Row>
-//                         <Col className="btnGetStarted">
-//                             <Button>Get Started</Button>
-//                         </Col>
-//                     </Row>
-//                 </Container>
-//             </div>
-//         );
-//     }
-// }
 
 export default LandingPage;

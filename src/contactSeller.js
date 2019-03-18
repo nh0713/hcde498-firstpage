@@ -35,6 +35,16 @@ class ContactSeller extends Component {
     render() {
         if (this.state.userPosts.length > 0) {
             console.log(this.state.userPosts[this.state.index].data().seller);
+            const db = fire.firestore();
+            const recentSearches = db.collection(`${this.user.email}RecentSearches`).add({
+                textbookName: this.props.match.params.textbookName,
+                seller: this.state.userPosts[this.state.index].data().seller,
+                userID: this.state.userPosts[this.state.index].data().userID,
+                location: this.state.userPosts[this.state.index].data().location,
+                condition: this.state.userPosts[this.state.index].data().condition,
+                datePosted: this.state.userPosts[this.state.index].data().datePosted,
+                imageDownloadURL: this.state.userPosts[this.state.index].data().imageDownloadURL,
+            });
         }
         return (
             <div>
@@ -53,7 +63,6 @@ class ContactSeller extends Component {
                                     </div>
                                 </Col>
                                 <Col className="contactColTwo">
-                                    <div className="test">
                                     <div><strong>Seller:</strong> {this.state.userPosts[this.state.index].data().seller}</div>
                                     <div><strong>Seller Email:</strong> {this.state.userPosts[this.state.index].data().userID}</div>
                                     <div><strong>Meetup Location:</strong> {this.state.userPosts[this.state.index].data().location}</div>
@@ -64,12 +73,11 @@ class ContactSeller extends Component {
                                             Email {this.state.userPosts[this.state.index].data().seller}
                                         </a>
                                     </Button>
-                                    </div>
                                 </Col>
                             </Row>
                         </Container>
                     ) : (
-                        // Else display message "Loading Data"
+                        // Else display message "Loading Data" should eventually have a loading icon instead of this
                         <div>Loading Data</div>
                     )}
                 </div>
