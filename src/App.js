@@ -24,9 +24,9 @@ class App extends Component {
           <Route path='/hcde498-firstpage/searchPage' component={SearchPage} />
           <Route path='/hcde498-firstpage/sellPage' component={SellPage} />
           <Route path='/hcde498-firstpage/myPosts' component={MyPosts} />
-          <Route path='/hcde498-firstpage/searchResults/:textbookName' component={SearchResults} />
-          <Route path='/hcde498-firstpage/searchResults/:textbookName/:index' component={ContactSeller} />
-          <Route path='/hcde498-firstpage/:textbookName/:sellerUserID' component={ContactSeller} />
+          <Route path='/hcde498-firstpage/searchResults/:textbookName' component={SearchResults} exact/>
+          <Route path='/hcde498-firstpage/searchResults/:textbookName/:index' component={ContactSeller} exact/>
+          <Route path='/hcde498-firstpage/:textbookName/:sellerUserID' component={ContactSeller} exact/>
           <Route component={Error} />
         </Switch>
       </Router>
