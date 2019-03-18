@@ -21,8 +21,8 @@ class SignedInBanner extends Component {
           <Container fluid>
                 <Row className="banner">
                     <Col sm={12} md={4} lg={10}>
-                    {/* <Link to='/hcde498-firstpage/searchPage'> */}
-                        <Link to='/searchPage'>
+                        <Link to='/hcde498-firstpage/searchPage'>
+                        {/* <Link to='/searchPage'> */}
                             <img src={logo} alt="logo"></img>
                         </Link>
                     </Col>
@@ -31,8 +31,8 @@ class SignedInBanner extends Component {
                         {/* <Button className="btnBanner">Account ({this.user.email})</Button> */}
                     </Col>
                     <Col className="colLogoutAccount" sm={6} md={4} lg={1}>
-                        {/* <Link to='/hcde498-firstpage/'> */}
-                        <Link to='/'>
+                        <Link to='/hcde498-firstpage/'>
+                        {/* <Link to='/'> */}
                             <i class="fas fa-sign-out-alt fa-3x" onClick={this.logout}></i>
                         </Link>
                     </Col>

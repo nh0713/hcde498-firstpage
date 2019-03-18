@@ -157,8 +157,8 @@ class SellPage extends Component {
                                     <option value="5 (Perfect)">5 (Perfect)</option>
                                 </FormControl>
                             </FormGroup>
-                            <Link to='myPosts'>
-                            {/* <Link to='/hcde498-firstpage/myPosts'> */}
+                            {/* <Link to='myPosts'> */}
+                            <Link to='/hcde498-firstpage/myPosts'>
                                 <Button
                                     block
                                     size="large"
