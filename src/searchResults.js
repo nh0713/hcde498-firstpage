@@ -38,8 +38,8 @@ class SearchResults extends Component {
 
     render() { 
         let searchResults = this.state.searchResults.map((post, i) => 
-            <Link style={{ textDecoration: 'none' }} key={i} to={`/searchResults/${this.state.searchResults[i].data().textbookName}/${i}`} onClick={this.resultClicked(i)}>
-            {/* <Link style={{ textDecoration: 'none' }} key={i} to={`/hcde498-firstpage/searchResults/${this.state.searchResults[i].data().textbookName}/${i}`} onClick={this.resultClicked}>                 */}
+            // <Link style={{ textDecoration: 'none' }} key={i} to={`/searchResults/${this.state.searchResults[i].data().textbookName}/${i}`} onClick={this.resultClicked(i)}>
+            <Link style={{ textDecoration: 'none' }} key={i} to={`/hcde498-firstpage/searchResults/${this.state.searchResults[i].data().textbookName}/${i}`} onClick={this.resultClicked}>
                 <Row className="individualPost mb-3">
                     <Col lg={4} className="colOne">
                         <img src={this.state.searchResults[i].data().imageDownloadURL} alt="thumbnail" className="thumbnail"></img>
